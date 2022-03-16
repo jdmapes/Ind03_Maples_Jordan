@@ -91,7 +91,8 @@ class TableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "My Table Cell", for: indexPath)
-        
+        cell.backgroundColor = UIColor(red: 1.0, green: 0.5, blue: 0, alpha: 1.0)
+
         // Grab data for the cell from the tuple
         let cellData: (state: String, nickname: String) = myStateList[indexPath[1]]
         
@@ -102,6 +103,20 @@ class TableViewController: UITableViewController {
         return cell
     }
     
+    
+    // Hide the navigation bar
+//    override func viewWillAppear(_ animated: Bool) {
+//        super.viewWillAppear(true)
+//
+//        self.navigationController?.setNavigationBarHidden(true, animated: true)
+//    }
+    
+    // Show the navigation bar
+//    override func viewWillDisappear(_ animated: Bool) {
+//        super.viewWillDisappear(true)
+//
+//        self.navigationController?.setNavigationBarHidden(false, animated: true)
+//    }
 
     /*
     // Override to support conditional editing of the table view.
