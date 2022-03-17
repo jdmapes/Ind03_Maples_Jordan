@@ -63,7 +63,8 @@ class TableViewController: UITableViewController {
                         (state: "Wyoming", nickname: "The Equality State")
                       ]
     
-    let myStateArea = ["571,951", "261,797", "155,959", "145,552", "121,356", "113,635", "109,826", "103,718", "97,100", "95,997", "82,747", "82,144", "81,815", "79,610", "76,872", "75,855", "68,976", "68,886", "68,667", "66,544", "57,906", "56,804", "55,869", "55,584", "54,310", "53,927", "52,068", "50,744", "48,711", "47,214", "46,907", "44,817", "43,562", "41,217", "40,948", "39,728", "39,594", "35,867", "30,862", "30,109", "24,078", "9,774", "9,250", "8,968", "7,840", "7,417", "6,423", "4,845", "1,954", "1,045"]
+    let myStateArea = ["52,420.07", "665,384.04", "113,990.30", "53,178.55", "163,694.74", "104,093.67", "5,543.41", "2,488.72", "65,757.70", "59,425.15", "10,931.72", "83,568.95", "57,913.55", "36,419.55", "56,272.81", "82,278.36", "40,407.80", "52,378.13", "35,379.74", "12,405.93", "10,554.39", "96,713.51", "86,935.83", "48,431.78", "69,706.99", "147,039.71", "77,347.81", "110,571.82", "9,349.16", "8,722.58", "121,590.30", "54,554.98", "53,819.16", "70,698.32", "44,825.58", "69,898.87", "98,378.54", "46,054.34", "1,544.89", "32,020.49", "77,115.68", "42,144.25", "268,596.46", "84,896.88", "9,616.36", "42,774.93", "71,297.95", "24,230.04", "65,496.38",
+        "97,813.01"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -103,64 +104,14 @@ class TableViewController: UITableViewController {
         return cell
     }
     
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "ShowDetail", sender: self)
+    }
     
-    // Hide the navigation bar
-//    override func viewWillAppear(_ animated: Bool) {
-//        super.viewWillAppear(true)
-//
-//        self.navigationController?.setNavigationBarHidden(true, animated: true)
-//    }
-    
-    // Show the navigation bar
-//    override func viewWillDisappear(_ animated: Bool) {
-//        super.viewWillDisappear(true)
-//
-//        self.navigationController?.setNavigationBarHidden(false, animated: true)
-//    }
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        if let destination = segue.destination as? ViewController {
+            destination.stateArea =
+        }
     }
-    */
 
 }
